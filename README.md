@@ -8,7 +8,7 @@ A zero-backlash cycloidal gearbox designed for drone applications, fully 3D prin
 
 \*\*Reduction ratio : 1:10\*\*
 
-
+![Assembly](images/render-assembly.png)
 
 \## Features
 
@@ -73,16 +73,10 @@ images/       # Renders and photos
 
 
 | Part | Material | Infill | Layer height |
-
 |---|---|---|---|
-
 | Housing | PETG | 40% | 0.2mm |
-
 | Cycloidal disc | PETG | 60% | 0.15mm |
-
 | Output flange | PETG | 50% | 0.2mm |
-
-| Ring pins | PETG | 100% | 0.15mm |
 
 
 
@@ -92,29 +86,20 @@ images/       # Renders and photos
 
 The cycloidal disc profile is defined by :
 
-
-
 ```
+x(θ) = R·cos(θ) - r·cos(θ + φ) - e·cos(N·θ)
+y(θ) = -R·sin(θ) + r·sin(θ + φ) + e·sin(N·θ)
 
-x(θ) = R·cos(θ) - r·cos(θ + φ) - e·cos((N+1)·θ)
-
-y(θ) = -R·sin(θ) + r·sin(θ + φ) + e·sin((N+1)·θ)
-
+φ = atan(sin((1-N)θ) / (R/(e·N) - cos((1-N)θ)))
 ```
 
 
 
 Where :
-
-\- `R` = ring pin circle radius
-
-\- `r` = ring pin radius
-
-\- `e` = eccentricity
-
-\- `N` = number of cycloidal disc lobes
-
-\- `φ` = atan(sin((1-N)θ) / (R/(e·N) - cos((1-N)θ)))`
+- `R` = ring pin circle radius (25 mm)
+- `r` = ring pin radius (2 mm)
+- `e` = eccentricity (2 mm)
+- `N` = number of cycloidal disc lobes (10)
 
 
 
@@ -122,16 +107,13 @@ Where :
 
 
 
-\- \[x] Concept and geometry defined
+## Status
 
-\- \[ ] SolidWorks CAD model
-
-\- \[ ] FEA stress analysis
-
-\- \[ ] First print prototype
-
-\- \[ ] Test results
-
+- [x] Concept and geometry defined
+- [x] SolidWorks CAD model (housing, cycloidal disc, output flange, assembly)
+- [ ] FEA stress analysis
+- [ ] First print prototype
+- [ ] Test results
 
 
 \## Author
